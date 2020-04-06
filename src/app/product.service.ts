@@ -4,6 +4,7 @@ import { Observable, Subject } from 'rxjs';
 
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
+import { Album } from './album';
 
 
 
@@ -14,8 +15,8 @@ export class ProductService {
 
   constructor(private _http:Http) { }
 
-  getAlbum(id:number){
-    return this._http.get(this._albumUrl).map((response) =>response.json());
+  getAlbum(id:number) : Album{
+    return this._http.get(this._albumUrl).map((response) => response.json());
   }
 
 }
